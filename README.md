@@ -51,7 +51,7 @@ jobs:
         pip install tutor
       shell: bash
 
-      # This action.
-      - name: Configure remote Redis service
-        uses: openedx-actions/tutor-service-configure-redis@v0.0.1
+    # This action.
+    - name: Configure remote Redis service
+      uses: openedx-actions/tutor-service-configure-redis@v0.0.1
 ```
