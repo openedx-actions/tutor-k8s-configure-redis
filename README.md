@@ -53,5 +53,5 @@ jobs:
 
       # This action.
       - name: Configure remote Redis service
-        uses: openedx-actions/tutor-service-configure-redis
+        uses: openedx-actions/tutor-service-configure-redis@v0.0.1
 ```
