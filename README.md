@@ -52,6 +52,6 @@ jobs:
       shell: bash
 
       # This action.
-      - name: Build the image and upload to AWS ECR
+      - name: Configure remote Redis service
         uses: openedx-actions/tutor-service-configure-redis
 ```
