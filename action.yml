@@ -6,6 +6,11 @@ description: Github Action to use Tutor to configure a remote Redis service for 
 branding:
   icon: 'cloud'
   color: 'orange'
+inputs:
+  namespace:
+    description: 'The Kubernetes namesapce to which the Open edX platform environment will be deployed. Example: openedx-prod'
+    required: true
+    type: string
 runs:
   using: "composite"
   steps:
