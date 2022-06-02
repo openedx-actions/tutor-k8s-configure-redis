@@ -2,7 +2,7 @@
 # usage: configure tutor SMTP email service
 #------------------------------------------------------------------------------
 name: configure Redis
-description:
+description: Github Action to use Tutor to configure a remote Redis service for use with Open edX running on AWS EKS Kubernetes
 branding:
   icon: 'cloud'
   color: 'orange'
