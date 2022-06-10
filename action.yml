@@ -18,9 +18,18 @@ runs:
     #   REDIS_HOST: redis.app.mrionline.com
     #
     # see: https://github.com/Medality-Health/openedx_devops/blob/main/terraform/modules/redis/main.tf
-    - name: fetch Redis configuration from Kubernetes secrets
+    - name: fetch Redis configuration from k8s
+      id: get-secret
+      uses: openedx-actions/tutor-k8s-get-secret@v0.0.2
+      with:
+        eks-namespace: ${{ inputs.namespace }}
+        eks-secret-name: redis
+
+    - name: set other environment variables
+      shell: bash
       run: |-
         echo "TUTOR_RUN_REDIS=false" >> $GITHUB_ENV
-        kubectl get secret redis -n ${{ inputs.namespace }}  -o json | jq  '.data | map_values(@base64d)' | jq -r 'keys[] as $k | "TUTOR_\($k|ascii_upcase)=\(.[$k])"' >> $GITHUB_ENV
-        tutor config save
+
+    - name: save config
       shell: bash
+      run: tutor config save
