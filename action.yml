@@ -8,14 +8,14 @@ branding:
   color: 'orange'
 inputs:
   namespace:
-    description: 'The Kubernetes namesapce to which the Open edX platform environment will be deployed. Example: openedx-prod'
+    description: 'The Kubernetes namespace to which the Open edX platform environment will be deployed. Example: openedx-prod'
     required: true
     type: string
 runs:
   using: "composite"
   steps:
     # retrieve the Redis connection parameter that we created in Terraform:
-    #   REDIS_HOST: redis.app.mrionline.com
+    #   REDIS_HOST: redis.app.yourschool.edu
     #
     # see: https://github.com/Medality-Health/openedx_devops/blob/main/terraform/modules/redis/main.tf
     - name: fetch Redis configuration from k8s
