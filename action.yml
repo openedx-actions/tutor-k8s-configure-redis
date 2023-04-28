@@ -20,7 +20,7 @@ runs:
     # see: https://github.com/Medality-Health/openedx_devops/blob/main/terraform/modules/redis/main.tf
     - name: fetch Redis configuration from k8s
       id: get-secret
-      uses: openedx-actions/tutor-k8s-get-secret@v1.0.0
+      uses: openedx-actions/tutor-k8s-get-secret@v1.0.1
       with:
         eks-namespace: ${{ inputs.namespace }}
         eks-secret-name: redis
